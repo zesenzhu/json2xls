@@ -1,0 +1,32 @@
+{
+  "name": "json2xls-cli",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "json转excel和excel转json工具",
+  "author": "zhuzesen",
+  "bin": {
+    "json2xls-cli": "./dist/esm/index.mjs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "json2xls": "node ./dist/esm/index.mjs",
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "inquirer": "^9.2.8",
+    "inquirer-fuzzy-path": "^2.3.0",
+    "json2xls": "^0.1.2",
+    "node": "^20.5.0",
+    "xlsx": "^0.18.5"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^20.4.5",
+    "@types/pkginfo": "^0.4.0",
+    "commander": "^11.0.0",
+    "pkginfo": "^0.4.1"
+  }
+}
