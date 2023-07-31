@@ -33,7 +33,7 @@ const i18nJson2xls = async (options) => {
             },
             !localeList && {
                 type: 'checkbox',
-                message: '请选择需要提取的国际化文件',
+                message: '请选择需要下载的语言包列表',
                 name: 'localeList',
                 choices: defaultLocaleList.map((i) => {
                     return {
@@ -58,10 +58,6 @@ const i18nJson2xls = async (options) => {
         fs.mkdirSync(outputDirPath);
     }
     const inputDirPath = path.resolve(process.cwd(), input);
-    if (!fs.existsSync(inputDirPath)) {
-        consola.error(`待转换文件的目录路径不存在: ${inputDirPath}，请重新输入`);
-        return;
-    }
     consola.info(pico.green(`
   待转换文件的目录路径: ${inputDirPath}
   语言包的存放目录路径: ${outputDirPath}
@@ -69,12 +65,12 @@ const i18nJson2xls = async (options) => {
   `));
     const result = []; // 二维
     localeList?.forEach((locale) => {
-        let json = { [locale]: '' };
+        let json = {};
         try {
             json = JSON.parse(fs.readFileSync(path.resolve(inputDirPath, `${locale}.json`), 'utf8'));
         }
         catch (e) {
-            consola.warn(e);
+            consola.error(e);
         }
         /**
          * 格式
