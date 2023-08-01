@@ -20,6 +20,7 @@
     "build": "tsc",
     "dev": "tsc --watch",
     "prepublishOnly": "npm run build",
+    "patch": "npm version patch",
     "release": "npm run prepublishOnly && npm publish --access public --tag beta"
   },
   "dependencies": {
@@ -27,10 +28,8 @@
     "inquirer": "^9.2.8",
     "inquirer-fuzzy-path": "^2.3.0",
     "json2xls": "^0.1.2",
-    "node": "^20.5.0",
     "node-xlsx": "^0.23.0",
     "picocolors": "^1.0.0",
-    "unzip": "^0.1.11",
     "xlsx": "^0.18.5"
   },
   "license": "MIT",
