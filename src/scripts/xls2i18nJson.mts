@@ -5,7 +5,6 @@ import path from 'path'
 import consola from 'consola'
 import pico from 'picocolors'
 import xlsx from 'node-xlsx'
-import { parseXlsx } from '../utils/xls.mjs'
 import defaultLocaleList from '../utils/defaultLocaleList.mjs'
 
 inquirer.registerPrompt('fuzzypath', fuzzypath)
@@ -67,12 +66,10 @@ const xls2i18nJson = async (options: CombineJson2xlsOptions) => {
   const header = xlsxData[0] // 第一行是提示不需要的
   const main = xlsxData.slice(1)
   const jsonData: Record<string, Record<string, string>> = {} // 输出
-
   header.forEach((h, i) => {
     const localeData = defaultLocaleList.find((d) => d.cnName === h)
     if (localeData) {
       jsonData[localeData.fileName] = {}
-
       main.forEach((item, index) => {
         jsonData[localeData.fileName][`${index}`] = item[i] || ''
       })

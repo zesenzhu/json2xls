@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 import pkginfo from 'pkginfo'
 import { Command } from 'commander'
-import combineJson2xls from './scripts/combineJson2xls.mjs'
 import i18nJson2xls from './scripts/i18nJson2xls.mjs'
-import { resolveApp } from './scripts/utils.mjs'
+import { resolveApp } from './utils/common.mjs'
 import xls2i18nJson from './scripts/xls2i18nJson.mjs'
 const program = new Command()
 
