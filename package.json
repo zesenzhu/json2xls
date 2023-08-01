@@ -1,11 +1,11 @@
 {
-  "name": "json2xls-cli",
+  "name": "i18n-scripts",
   "version": "1.0.0",
   "type": "module",
   "description": "json转excel和excel转json工具",
   "author": "zhuzesen",
   "bin": {
-    "json2xls-cli": "./dist/esm/index.mjs"
+    "i18n-scripts": "./dist/esm/index.mjs"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
