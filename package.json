@@ -1,11 +1,16 @@
 {
-  "name": "i18n-scripts",
+  "name": "@zesen_zhu/i18n-scripts",
   "version": "1.0.0",
   "type": "module",
   "description": "json转excel和excel转json工具",
   "author": "zhuzesen",
   "bin": {
     "i18n-scripts": "./dist/esm/index.mjs"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "tag": "beta",
+    "access": "public"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,7 +19,8 @@
     "xls2json": "node ./dist/esm/index.mjs xls2i18nJson -i locale1/国际化.xlsx -o locale1 ",
     "build": "tsc",
     "dev": "tsc --watch",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "npm run build",
+    "release": "npm run prepublishOnly && npm publish --access public --tag beta"
   },
   "dependencies": {
     "consola": "^3.2.3",
