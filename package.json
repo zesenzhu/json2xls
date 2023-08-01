@@ -1,6 +1,6 @@
 {
   "name": "@zesen_zhu/i18n-scripts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "json转excel和excel转json工具",
   "author": "zhuzesen",
