@@ -2,6 +2,7 @@
 import pkginfo from 'pkginfo';
 import { Command } from 'commander';
 import i18nJson2xls from './scripts/i18nJson2xls.mjs';
+import xls2i18nJson from './scripts/xls2i18nJson.mjs';
 const program = new Command();
 program.version(pkginfo.version, '-v, --version', '@zesenzhu/json2xls-cli 当前版本');
 program
@@ -20,7 +21,7 @@ program
     .option('-i, --input <dirPath>', '待转换文件的目录路径')
     .option('-o, --output <dirPath>', '转换后生成文件的存储目录路径')
     .action((options) => {
-    i18nJson2xls(options);
+    xls2i18nJson(options);
 });
 // 解析用户执行命令传入的参数
 program.parse(process.argv);

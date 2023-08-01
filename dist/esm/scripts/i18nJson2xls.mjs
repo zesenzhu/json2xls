@@ -55,7 +55,9 @@ const i18nJson2xls = async (options) => {
     const outputDirPath = path.resolve(process.cwd(), output);
     // 当不存在这个目录，自动创建
     if (!fs.existsSync(outputDirPath)) {
+        consola.start('当前输出目录不存在，自动生成中...');
         fs.mkdirSync(outputDirPath);
+        consola.success(`生成目录成功！`);
     }
     const inputDirPath = path.resolve(process.cwd(), input);
     if (!fs.existsSync(inputDirPath)) {
